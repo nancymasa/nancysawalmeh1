@@ -1,6 +1,4 @@
 package sources_code;
-import static sources_code.LoginSteps.x;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -94,7 +92,7 @@ public class mainapplication {
 	    				pro.carpetdetails();
 	    				pro.coverdetails();
 	    				
-				        for (int i=0;i<pro.rugDetails.size();i++) {
+				        for (int i=0;i<ProdectSteps.rugDetails.size();i++) {
 				        	count++;
 				        }
     	    			System.out.println("\n");
@@ -160,14 +158,14 @@ public class mainapplication {
  	    			int number1=Integer.parseInt(input1.nextLine());
  	    			switch(number1) {
  	    			case 1:{
- 	    				for(int i=0;i<cus.mylist.size();i++) {
- 	    					cus.mylist.get(i).show_customer();
+ 	    				for(int i=0;i<Customersteps.mylist.size();i++) {
+ 	    					Customersteps.mylist.get(i).show_customer();
  	    				}
  	    				
  	    				break;
  	    			}
  	    			case 2:{
- 	    				cus.Saveinformation_custmer();
+ 	    				cus.Saveinformationcustmer();
  	    				log.addnewlogin();
  	    			
  	    				break;
@@ -248,7 +246,7 @@ public class mainapplication {
 	
 	public static void customer() {
 		
-		int x=LoginSteps.x;
+		
         int flge1=1;
 		input = new Scanner(System.in);
 
@@ -264,7 +262,7 @@ public class mainapplication {
 			int number=Integer.parseInt(input.nextLine());
 			switch(number) {
 			case 1:{
-				cus.addshopping();
+				cus.Addshopping();
 				break;
 			}//case1
 			case 2:{

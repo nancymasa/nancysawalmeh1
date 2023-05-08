@@ -20,7 +20,7 @@ public class Customersteps {
     static Order o=new Order();
     static int x=log.getx();
     double count=0.0;
-	private static boolean Generate1=false;
+	private static boolean grer=false;
 
 	public final List<ProdectSteps> shoppingcart=new ArrayList<ProdectSteps>();
 	public final List<Order> order=new ArrayList<Order>();
@@ -41,11 +41,11 @@ public class Customersteps {
 	
 	}
 	public boolean Generate() {
-		return Generate1;
+		return grer;
 	}
 	
 	public void setGenerate(boolean Generate) {
-		Customersteps.Generate1=Generate;
+		Customersteps.grer=Generate;
 	}
 	
 	public Customersteps(){}
@@ -107,7 +107,7 @@ public class Customersteps {
 	}
 	
 	
-public void Saveinformation_custmer(){
+public void Saveinformationcustmer(){
 	 
 	System.out.println("enter id =");
 	  input2 = new Scanner(System.in);
@@ -219,7 +219,7 @@ input2 = new Scanner(System.in);
 	
 }
 
-public void addshopping() {
+public void Addshopping() {
 	System.out.println(log.getx());
 
 	pro.carpetdetails();

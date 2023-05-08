@@ -21,7 +21,7 @@ public class discount {
 
 	@When("the total balance from shopping cart greater than {string}  successfull to discount,but if less than fail the discount")
 	public void the_total_balance_from_shopping_cart_greater_than_successfull_to_discount_but_if_less_than_fail_the_discount(String string) {
-		c.addshopping();
+		c.Addshopping();
 		c.showshopping();
 	}
 

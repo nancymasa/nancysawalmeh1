@@ -1,12 +1,9 @@
 package sources_code;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 import java.util.Scanner;
 
-import javax.swing.JOptionPane;
-
-import io.cucumber.messages.types.DataTable;
 
 public class ProdectSteps {
 	 private  String Category;
@@ -33,7 +30,7 @@ public class ProdectSteps {
 	    }
 	    public ProdectSteps(){}
 
-	     static ArrayList<ProdectSteps> rugDetails = new ArrayList<ProdectSteps>();
+	     static List<ProdectSteps> rugDetails = new ArrayList<ProdectSteps>();
 		private Scanner input0;
 		
 		public void carpetpage() {
