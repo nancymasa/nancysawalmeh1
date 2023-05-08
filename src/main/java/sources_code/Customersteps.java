@@ -19,8 +19,8 @@ public class Customersteps {
     double count=0.0;
 	private static boolean Generate1;
 
-	public static final List<ProdectSteps> shoppingcart=new ArrayList<ProdectSteps>();
-	public  static final List<Order> order=new ArrayList<Order>();
+	public final List<ProdectSteps> shoppingcart=new ArrayList<ProdectSteps>();
+	public final List<Order> order=new ArrayList<Order>();
 	ProdectSteps pro=new ProdectSteps();
 	private int id;
 	private String name;
