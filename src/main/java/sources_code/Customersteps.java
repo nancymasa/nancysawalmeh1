@@ -219,7 +219,7 @@ input2 = new Scanner(System.in);
 	
 }
 
-public void Addshopping() {
+public void addshopping() {
 	System.out.println(log.getx());
 
 	pro.carpetdetails();
@@ -334,8 +334,8 @@ public void showshopping() {
 				
     		}}}
 	
-	 for(ProdectSteps pro :mylist.get(log.getx()).shoppingcart) {
-		   pro.print();}
+	 for(ProdectSteps pr :mylist.get(log.getx()).shoppingcart) {
+		   pr.print();}
          System.out.println("balance= ");
          System.out.println(mylist.get(log.getx()).getbalance());
         

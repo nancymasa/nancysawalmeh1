@@ -262,7 +262,7 @@ public class mainapplication {
 			int number=Integer.parseInt(input.nextLine());
 			switch(number) {
 			case 1:{
-				cus.Addshopping();
+				cus.addshopping();
 				break;
 			}//case1
 			case 2:{
