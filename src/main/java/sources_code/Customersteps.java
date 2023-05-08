@@ -12,15 +12,15 @@ import java.util.Scanner;
 public class Customersteps {
 	static LoginSteps  log= new LoginSteps();
 	static InvoiceSteps in=new InvoiceSteps();
-	static ReportsSteps R=new ReportsSteps();
+	static ReportsSteps Re=new ReportsSteps();
 	static Worker w =new Worker();
     static Order o=new Order();
     static int x=log.getx();
     double count=0.0;
-	private static boolean Generate;
+	private static boolean Generate1;
 
-	public List<ProdectSteps> shoppingcart=new ArrayList<ProdectSteps>();
-	public List<Order> order=new ArrayList<Order>();
+	public static final List<ProdectSteps> shoppingcart=new ArrayList<ProdectSteps>();
+	public  static final List<Order> order=new ArrayList<Order>();
 	ProdectSteps pro=new ProdectSteps();
 	private int id;
 	private String name;
@@ -38,11 +38,11 @@ public class Customersteps {
 	
 	}
 	public boolean Generate() {
-		return Generate;
+		return Generate1;
 	}
 	
 	public void setGenerate(boolean Generate) {
-		Customersteps.Generate=Generate;
+		Customersteps.Generate1=Generate;
 	}
 	
 	public Customersteps(){}
@@ -87,7 +87,7 @@ public class Customersteps {
 		this.address = address ;		
 	}
 	
-	public ArrayList <Customersteps> mylist =new ArrayList<Customersteps>();
+	public static final  List <Customersteps> mylist =new ArrayList<Customersteps>();
 	private Scanner input2;
 	
 
