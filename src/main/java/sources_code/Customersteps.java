@@ -56,10 +56,10 @@ public class Customersteps {
 		this.balance=balance;
 	}
 	
-	public boolean getissave() {
+	public boolean getissavee() {
 		return issavee ;	
 	}
-	public void setissave(boolean issave) {
+	public void setissavee(boolean issave) {
 		this.issavee = issave;		
 	}
 	
