@@ -16,7 +16,7 @@ public class Customersteps {
     static Order o=new Order();
     static int x=log.getx();
     double count=0.0;
-	public static boolean Generate;
+	private static boolean Generate;
 
 	public ArrayList<ProdectSteps> shoppingcart=new ArrayList<ProdectSteps>();
 	public ArrayList<Order> order=new ArrayList<Order>();
@@ -25,8 +25,8 @@ public class Customersteps {
 	private String name;
 	private Integer phone;
 	private String address;
-	public boolean issavee=false; 
-	public static boolean issave;
+	private boolean issavee=false; 
+	private static boolean issave;
     private double  balance;
 
 	public Customersteps(int ids, String names, Integer phones,String addres){
@@ -112,7 +112,7 @@ public void saveinformation_custmer(){
 	  for(int i=0; i<mylist.size();i++) {
 		  if(mylist.get(i).id != idd) {
 		  this. issavee=true;
-		  issave=issavee;
+		  setIssave(issavee);
 		  }}
 		
 		 
@@ -575,29 +575,7 @@ public void ccustomernottrue() {
 	
 }
 
-/*private void Readfiles()
-{
-	
-    try
-    {  
-        File readf = new File("input.txt"); 
-        Scanner read = new Scanner(readf);
-        while(read.hasNextLine())
-        {
-        	
-       order.add(new Order(o.getID(),o.getCategory(),o.getId(),o.getName(),o.getPicture(),o.getDescription(),o.getPrice(),o.getMaterial(),o.getCleaninig(),o.getQuantity()));
-       
-        }
-        read.close();
-    }
-    catch(FileNotFoundException e)
-    {
-        e.printStackTrace();
-    }
-    
-    
-    
-}*/
+
 private void writefile()
 {
     try
@@ -617,6 +595,12 @@ private void writefile()
         e.printStackTrace();
     }
     }
+public static boolean isIssave() {
+	return issave;
+}
+public static void setIssave(boolean issave) {
+	Customersteps.issave = issave;
+}
 
 
 }

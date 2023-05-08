@@ -26,7 +26,7 @@ public class customers {
 
 	@Then("successfull to save information")
 	public void successfull_to_save_information() {
-		 assertTrue(o.issavee==true);
+		 assertTrue(o.getissave()==true);
 	   
 	}
 
@@ -36,7 +36,7 @@ public class customers {
 	public void failed_to_save_information() {
 
 		 
-		 assertTrue(o.issavee==false);
+		 assertTrue(o.getissave()==false);
 	}
 
 	

@@ -104,9 +104,8 @@ public class LoginSteps {
      
      
      public  void  addnewlogin() {
-    	//boolean e= cus.getissave();
-    	//System.out.print(e);1274
-    	if(Customersteps.issave) {
+    	
+    	if(Customersteps.isIssave()) {
     	 System.out.println("Enter Username : ");
  		input3 = new Scanner(System.in);
  		String username=input3.nextLine();

@@ -291,17 +291,7 @@ public class ProdectSteps {
 		       for (int i=0;i<rugDetails.size();i++) {
 		            if (rugDetails.get(i).getid() == id) {
 		            	f=1;
-		            	//in3 = new Scanner(System.in);
-		   		       // System.out.println("Enter product Category: ");
-		   		        //String Category  = in3.next();
-		   		        
-		               // System.out.println("Enter name product=");
-						// input13 = new Scanner(System.in);
-						// String name = input13.next();
-						
-						// System.out.println("Enter picture product=");
-						// input23 = new Scanner(System.in);
-						// String pe = input23.next();
+		            	
 						 
 						System.out.println("Enter discription product=");
 						 input0 = new Scanner(System.in);
