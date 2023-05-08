@@ -2,15 +2,16 @@ package sources_code;
 import static sources_code.LoginSteps.x;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class mainapplication {
 	
-	static ArrayList <Order>order;
+	static List <Order>order;
 	static ArrayList <LoginSteps> userslogin;
 	static ArrayList<Customersteps> mylist;
 	static ArrayList<ProdectSteps> rugDetails;
-	static ArrayList<Worker> workerlist;
+	static List<Worker> workerlist;
 	static  LoginSteps  log= new LoginSteps();
 	static ProdectSteps pro=new ProdectSteps();
 	

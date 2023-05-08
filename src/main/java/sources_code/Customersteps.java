@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Customersteps {
@@ -18,8 +19,8 @@ public class Customersteps {
     double count=0.0;
 	private static boolean Generate;
 
-	public ArrayList<ProdectSteps> shoppingcart=new ArrayList<ProdectSteps>();
-	public ArrayList<Order> order=new ArrayList<Order>();
+	public List<ProdectSteps> shoppingcart=new ArrayList<ProdectSteps>();
+	public List<Order> order=new ArrayList<Order>();
 	ProdectSteps pro=new ProdectSteps();
 	private int id;
 	private String name;

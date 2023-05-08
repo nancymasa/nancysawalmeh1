@@ -1,6 +1,7 @@
 package sources_code;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -76,8 +77,8 @@ public class LoginSteps {
 		this.password = password;		
 	}
 	Scanner input=new Scanner(System.in);
-	static ArrayList <LoginSteps> userslogin= new ArrayList<LoginSteps>();
-	static ArrayList <LoginSteps> workerlogin= new ArrayList<LoginSteps>();
+	static List<LoginSteps> userslogin= new ArrayList<LoginSteps>();
+	static List <LoginSteps> workerlogin= new ArrayList<LoginSteps>();
 
 	boolean isLogin =false;
 	public int failsauthentication;

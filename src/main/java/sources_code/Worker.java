@@ -1,10 +1,11 @@
 package sources_code;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Worker {
-	public ArrayList<Worker> workerlist=new ArrayList<Worker>();
-	public ArrayList<Order> list=new  ArrayList <Order>();
+	public List<Worker> workerlist=new ArrayList<Worker>();
+	public List<Order> list=new  ArrayList <Order>();
 
 	Customersteps obj=new Customersteps();
      private static boolean iswaiting;
