@@ -104,8 +104,6 @@ public class Order {
 			 System.out.printf("The type cleaning : %s || .",cleaninig);
 			 System.out.printf("The Quantity : ");
 			 System.out.print(quantity);
-			// System.out.printf("\n totalaccount "  );
-			// System.out.print(C.getbalance() );
 			 System.out.print("\n" );
 
 		}

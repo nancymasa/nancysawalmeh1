@@ -167,7 +167,7 @@ public class mainapplication {
  	    				break;
  	    			}
  	    			case 2:{
- 	    				cus.saveinformation_custmer();
+ 	    				cus.Saveinformation_custmer();
  	    				log.addnewlogin();
  	    			
  	    				break;

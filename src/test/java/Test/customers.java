@@ -21,7 +21,7 @@ public class customers {
 
 	@When("the customer give id , name , phone and address")
 	public void the_customer_give_id_name_phone_and_address() {
-	   o.saveinformation_custmer();
+	   o.Saveinformation_custmer();
 	}
 
 	@Then("successfull to save information")

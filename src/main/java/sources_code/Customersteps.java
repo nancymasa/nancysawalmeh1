@@ -2,6 +2,8 @@ package sources_code;
 
 import static sources_code.ProdectSteps.rugDetails;
 
+
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -9,15 +11,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class Customersteps {
 	static LoginSteps  log= new LoginSteps();
 	static InvoiceSteps in=new InvoiceSteps();
-	static ReportsSteps Re=new ReportsSteps();
+	
 	static Worker w =new Worker();
     static Order o=new Order();
     static int x=log.getx();
     double count=0.0;
-	private static boolean Generate1;
+	private static boolean Generate1=false;
 
 	public final List<ProdectSteps> shoppingcart=new ArrayList<ProdectSteps>();
 	public final List<Order> order=new ArrayList<Order>();
@@ -29,7 +32,7 @@ public class Customersteps {
 	private boolean issavee=false; 
 	private static boolean issave;
     private double  balance;
-
+  
 	public Customersteps(int ids, String names, Integer phones,String addres){
 		this.id=ids;
 		this.name=names;
@@ -87,16 +90,16 @@ public class Customersteps {
 		this.address = address ;		
 	}
 	
-	public static final  List <Customersteps> mylist =new ArrayList<Customersteps>();
+	protected static final  List <Customersteps> mylist =new ArrayList<Customersteps>();
 	private Scanner input2;
-	
+	 
 
 	public void recordinformationinit() {
 		mylist.add(new Customersteps(1,"nancy",0555,"nublse"));
 		mylist.add(new Customersteps(2,"masa",0222,"tullkarem"));
 		mylist.add(new Customersteps(4,"noor shole",1778,"hebron"));
-		mylist.add(new Customersteps(5,"noor sawalmeh",1778,"hebron"));
-		mylist.add(new Customersteps(6,"noor sawalmeh",1778,"hebron"));
+		mylist.add(new Customersteps(5,"noor sawalmeh",1778,"hebron north"));
+		mylist.add(new Customersteps(6,"noor sawalmeh",1778,"Gase"));
 
 
 
@@ -104,8 +107,8 @@ public class Customersteps {
 	}
 	
 	
-public void saveinformation_custmer(){
-	
+public void Saveinformation_custmer(){
+	 
 	System.out.println("enter id =");
 	  input2 = new Scanner(System.in);
 	 int idd=input2.nextInt();  
@@ -144,7 +147,8 @@ public void saveinformation_custmer(){
 	  
 	
 public void show_customer() {
-System.out.printf(" id :  %s || ",getid());
+
+System.out.printf (" id :  %s || ",getid());
 System.out.printf(" Name customer : %s  ||",getname());
 System.out.printf(" phone customer :  ");
 System.out.print(getphone());
