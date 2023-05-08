@@ -40,12 +40,12 @@ public class Customersteps {
 		this.address=addres;
 	
 	}
-	public boolean Generate() {
+	public boolean grer() {
 		return grer;
 	}
 	
-	public void setGenerate(boolean Generate) {
-		Customersteps.grer=Generate;
+	public void setGenerate(boolean grer) {
+		Customersteps.grer=grer;
 	}
 	
 	public Customersteps(){}
@@ -107,7 +107,7 @@ public class Customersteps {
 	}
 	
 	
-public void Saveinformationcustmer(){
+public void saveinformationcustmer(){
 	 
 	System.out.println("enter id =");
 	  input2 = new Scanner(System.in);
@@ -146,7 +146,7 @@ public void Saveinformationcustmer(){
 	  
 	  
 	
-public void show_customer() {
+public void showcustomer() {
 
 System.out.printf (" id :  %s || ",getid());
 System.out.printf(" Name customer : %s  ||",getname());
@@ -162,7 +162,7 @@ System.out.print(" \n");
 public void updetecustomer() {
 	int flag=0;
 	for (Customersteps c:mylist) {
-			c.show_customer();
+			c.showcustomer();
 	}
 	System.out.println("\n ENTER ID =");
 	input2 = new Scanner(System.in);
@@ -203,7 +203,7 @@ private void updatecustomrer(int id1, String namenew, int phonenew, String adder
 }
 public void deletecustomer() {
 	for (Customersteps c:mylist) {
-		c.show_customer();
+		c.showcustomer();
 }
 System.out.println("\n ENTER ID =");
 input2 = new Scanner(System.in);

@@ -21,6 +21,6 @@ public class Generatestatistics {
 
 	@Then("successfull to Generate statistics")
 	public void successfull_to_generate_statistics() {
-		assertTrue(c.Generate()==true);
+		assertTrue(c.grer()==true);
 	}
 }

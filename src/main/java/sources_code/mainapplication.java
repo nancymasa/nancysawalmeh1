@@ -159,13 +159,13 @@ public class mainapplication {
  	    			switch(number1) {
  	    			case 1:{
  	    				for(int i=0;i<Customersteps.mylist.size();i++) {
- 	    					Customersteps.mylist.get(i).show_customer();
+ 	    					Customersteps.mylist.get(i).showcustomer();
  	    				}
  	    				
  	    				break;
  	    			}
  	    			case 2:{
- 	    				cus.Saveinformationcustmer();
+ 	    				cus.saveinformationcustmer();
  	    				log.addnewlogin();
  	    			
  	    				break;
