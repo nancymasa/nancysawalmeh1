@@ -10,14 +10,14 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.logging.Logger;
+
 
 
 
 public class Customersteps {
+	static OrderParameter ordq=new OrderParameter();
 	static LoginSteps  log= new LoginSteps();
 	static InvoiceSteps in=new InvoiceSteps();
-	
 	static Worker w =new Worker();
     static Order o=new Order();
     static int x=log.getx();
@@ -345,14 +345,14 @@ public void showshopping() {
          System.out.println("\n ");
        
          if(mylist.get(log.getx()).getbalance()>=400) {
-        	 in.setdiscount(true);
+        	 InvoiceSteps.setdiscount(true);
 	         System.out.println("balance after discount=");
 	        mylist.get(log.getx()).setbalance(mylist.get(log.getx()).getbalance()-(mylist.get(log.getx()).getbalance()*(.1)));
 	         System.out.println(mylist.get(log.getx()).getbalance());
 	         System.out.println("\n ");
 	         }
          else {
-        	 in.setdiscount(false);
+        	 InvoiceSteps.setdiscount(false);
          }
 }
 							   
@@ -381,13 +381,13 @@ public void ckeckout()	{
 	int count=0;
 	System.out.println(log.getx());
 if(mylist.get(log.getx()).shoppingcart .isEmpty() ) {
-	 in.setisgenerate(false);
+	InvoiceSteps.setisgenerate(false);
 		System.out.println("shopping cart is null");
 		f=0;
 	}
 	if(f==1) {
 		
-		//in.setisgenerate(true);
+		InvoiceSteps.setisgenerate(true);
 		System.out.println("\n -----------------------------------------------------");
 	    System.out.println("                -------Receipt ---------        ");
 	System.out.println(" Address : "+mylist.get(log.getx()).getaddress());
@@ -409,16 +409,17 @@ if(mylist.get(log.getx()).shoppingcart .isEmpty() ) {
 		 System.out.println("\nEnter ok= ");
 		 String check=input2.next();
 		 if(check.equals("ok")) {
-			 
+			
 			Worker.setIswaiting(true);
 	             for(int j=0;j<mylist.get(log.getx()).shoppingcart.size();j++) {
 	            	
-				 order.add(new Order(new OrderParameter()));
-				 writefile(); 
-				w.workerlist.get(log.getx()).list.add(new Order(new OrderParameter()));
-			
-				 }
-	            
+	            	 order.add(new Order(log.getx() ,mylist.get(log.getx()).shoppingcart.get(j).getCategory(),mylist.get(log.getx()).shoppingcart.get(j).getid(),mylist.get(log.getx()).shoppingcart.get(j).getName(),
+							 mylist.get(log.getx()).shoppingcart.get(j).getprice(),mylist.get(log.getx()).shoppingcart.get(j).getMaterial(),mylist.get(log.getx()).shoppingcart.get(j).getQuantity()));
+					 writefile(); 
+					w.workerlist.get(log.getx()).list.add(new Order(log.getx() ,mylist.get(log.getx()).shoppingcart.get(j).getCategory(),mylist.get(log.getx()).shoppingcart.get(j).getid(),mylist.get(log.getx()).shoppingcart.get(j).getName(),
+							 mylist.get(log.getx()).shoppingcart.get(j).getprice(),mylist.get(log.getx()).shoppingcart.get(j).getMaterial(),mylist.get(log.getx()).shoppingcart.get(j).getQuantity()));
+					
+					 }
 	            
 	         mylist.get(log.getx()).shoppingcart.clear();
 			 mylist.get(log.getx()).setbalance(0);

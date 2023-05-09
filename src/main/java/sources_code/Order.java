@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-	
+	static OrderParameter ordp=new OrderParameter();
+
 	Customersteps C=new Customersteps();
 	private String Category;
 	private int id;
@@ -17,19 +18,16 @@ public class Order {
 	private int quantity;
 	private int ID;
 	public Order(){}
-		public Order(OrderParameter parameterObject) {
-	    	this.setID(parameterObject.getiDn());
-			this.setCategory(parameterObject.getcategoryn());
-	    	this.setId(parameterObject.getido());
-	    	this.setName(parameterObject.getnamen());
-	    	this.setPicture(parameterObject.getpicturen());
-	    	this.setDescription(parameterObject.getdescriptionn());
-	    	this.setPrice(parameterObject.getpricen()) ;
-	    	this.setMaterial(parameterObject.getmaterialn());
-	    	this.setCleaninig(parameterObject.getcleaninign());
-	    	this.setQuantity((parameterObject.getquantityn()));
-	    	
-		}
+	public Order(int ID,String Category,int id,String name, double price, String material,int quantity) {
+    	this.setID(ID);
+		this.setCategory(Category);
+    	this.setId(id);
+    	this.setName(name);
+    	this.setPrice(price) ;
+    	this.setMaterial(material);
+    	this.setQuantity((quantity));
+    	
+	}
 		public List<Order> order=new ArrayList<Order>();
 		public String getCategory() {
 			return Category;
@@ -97,16 +95,12 @@ public class Order {
 			 System.out.printf(" || Category product: %s || " , Category );
 			 System.out.printf("Id  product: %s || ",getId());
 			 System.out.printf("Name product: %s || ",name); 
-			 System.out.printf("Link for Picture product: %s || ",picture);
-			 System.out.printf("The discription : %s || ",description);
 			 System.out.print("The price :  ");
 			 System.out.print(price);
 			 System.out.printf(" || The Material: %s  || ",material);
-			 System.out.printf("The type cleaning : %s || .",cleaninig);
-			 System.out.printf("The Quantity : ");
+			 System.out.printf("|| he Quantity : ");
 			 System.out.print(quantity);
 			 System.out.print("\n" );
 
 		}
-		
 }

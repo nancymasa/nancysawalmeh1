@@ -11,6 +11,7 @@ public class OrderParameter {
 	private  String materialn;
 	private  String cleaninign;
 	private  int quantityn;
+	
 	public OrderParameter setid(int iDn) {
 		 this.iDn = iDn;
 	        return this;
@@ -105,5 +106,21 @@ public class OrderParameter {
 		
 		return quantityn;
 	}
-	
+	public void printop() {
+		 System.out.printf("ID: "  );
+		 System.out.print( iDn );
+		 System.out.printf(" || Category product: %s || " , categoryn);
+		 System.out.printf("Id  product: %s || ",getido());
+		 System.out.printf("Name product: %s || ",namen); 
+		 System.out.printf("Link for Picture product: %s || ",picturen);
+		 System.out.printf("The discription : %s || ",descriptionn);
+		 System.out.print("The price :  ");
+		 System.out.print(pricen);
+		 System.out.printf(" || The Material: %s  || ",materialn);
+		 System.out.printf("The type cleaning : %s || .",cleaninign);
+		 System.out.printf("The Quantity : ");
+		 System.out.print(quantityn);
+		 System.out.print("\n" );
+
+	}
 }
