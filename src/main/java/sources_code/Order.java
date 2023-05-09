@@ -20,7 +20,7 @@ public class Order {
 		public Order(OrderParameter parameterObject) {
 	    	this.setID(parameterObject.getiDn());
 			this.setCategory(parameterObject.getcategoryn());
-	    	this.setId(parameterObject.getidn());
+	    	this.setId(parameterObject.getido());
 	    	this.setName(parameterObject.getnamen());
 	    	this.setPicture(parameterObject.getpicturen());
 	    	this.setDescription(parameterObject.getdescriptionn());

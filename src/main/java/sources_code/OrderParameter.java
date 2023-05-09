@@ -66,7 +66,7 @@ public class OrderParameter {
 		return categoryn;
 	}
 
-	public int getidn() {
+	public int getido() {
 		
 		return ido;
 	}
