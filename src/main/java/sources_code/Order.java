@@ -7,7 +7,7 @@ public class Order {
 	static OrderParameter ordp=new OrderParameter();
 
 	Customersteps C=new Customersteps();
-	private String Categoryn;
+	private String categoryn;
 	private int id;
 	private String name;
 	private String picture;
@@ -16,11 +16,11 @@ public class Order {
 	private String material;
 	private String cleaninig;
 	private int quantity;
-	private int ID;
+	private int iD;
 	public Order(){}
-	public Order(int IDn,String Categoryn,int id,String name, double price, String material,int quantity) {
-    	this.setID(ID);
-		this.setCategory(Categoryn);
+	public Order(int iD,String categoryn,int id,String name, double price, String material,int quantity) {
+    	this.setID(iD);
+		this.setCategory(categoryn);
     	this.setId(id);
     	this.setName(name);
     	this.setPrice(price) ;
@@ -30,10 +30,10 @@ public class Order {
 	}
 		public List<Order> order=new ArrayList<Order>();
 		public String getCategory() {
-			return Categoryn;
+			return categoryn;
 		}
 		public void setCategory(String category) {
-			Categoryn = category;
+			categoryn = category;
 		}
 		public int getId() {
 			return id;
@@ -66,10 +66,10 @@ public class Order {
 			this.price = price;
 		}
 		public int getID() {
-			return ID;
+			return iD;
 		}
 		public void setID(int iD) {
-			ID = iD;
+			this.iD = iD;
 		}
 		public int getQuantity() {
 			return quantity;
@@ -91,8 +91,8 @@ public class Order {
 		}
 		public void printorder() {
 			 System.out.printf("ID: "  );
-			 System.out.print( ID );
-			 System.out.printf(" || Category product: %s || " , Categoryn );
+			 System.out.print( iD );
+			 System.out.printf(" || Category product: %s || " , categoryn );
 			 System.out.printf("Id  product: %s || ",getId());
 			 System.out.printf("Name product: %s || ",name); 
 			 System.out.print("The price :  ");
