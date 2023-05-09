@@ -7,7 +7,7 @@ public class Order {
 	static OrderParameter ordp=new OrderParameter();
 
 	Customersteps C=new Customersteps();
-	private String Category;
+	private String Categoryn;
 	private int id;
 	private String name;
 	private String picture;
@@ -18,9 +18,9 @@ public class Order {
 	private int quantity;
 	private int ID;
 	public Order(){}
-	public Order(int ID,String Category,int id,String name, double price, String material,int quantity) {
+	public Order(int IDn,String Categoryn,int id,String name, double price, String material,int quantity) {
     	this.setID(ID);
-		this.setCategory(Category);
+		this.setCategory(Categoryn);
     	this.setId(id);
     	this.setName(name);
     	this.setPrice(price) ;
@@ -30,10 +30,10 @@ public class Order {
 	}
 		public List<Order> order=new ArrayList<Order>();
 		public String getCategory() {
-			return Category;
+			return Categoryn;
 		}
 		public void setCategory(String category) {
-			Category = category;
+			Categoryn = category;
 		}
 		public int getId() {
 			return id;
@@ -92,7 +92,7 @@ public class Order {
 		public void printorder() {
 			 System.out.printf("ID: "  );
 			 System.out.print( ID );
-			 System.out.printf(" || Category product: %s || " , Category );
+			 System.out.printf(" || Category product: %s || " , Categoryn );
 			 System.out.printf("Id  product: %s || ",getId());
 			 System.out.printf("Name product: %s || ",name); 
 			 System.out.print("The price :  ");
