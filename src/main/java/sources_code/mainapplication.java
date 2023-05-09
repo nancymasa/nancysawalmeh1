@@ -173,10 +173,14 @@ public class mainapplication {
  	    			
  	    			case 3:{
  	    				
- 	    				cus.updetecustomer();}
+ 	    				cus.updetecustomer();
+ 	    				break;
+ 	    				}
  	    			
              case 4:{
- 	    	      cus.deletecustomer();}
+ 	    	      cus.deletecustomer();
+ 	    	     break;
+ 	    	      }
  	    				
              case 5:{
 	    	     flge3=0;
@@ -184,11 +188,10 @@ public class mainapplication {
 	    	     }		
  	    			
  	    			
- 	    			}//number
- 				}//while loop
- 				
+ 	    			}
+ 				}
  			break;	
-			}//case2
+			}
 			
 			case 3:{
 				for(Worker w:W.workerlist) {
@@ -264,7 +267,7 @@ public class mainapplication {
 			case 1:{
 				cus.addshopping();
 				break;
-			}//case1
+			}
 			case 2:{
 				cus.showshopping();
 				break;
@@ -348,6 +351,10 @@ public class mainapplication {
 					log.setisLoginworker(false);
 					break;
 				}
+				default:
+	                 
+	                  break;
+				
 				}
 				 if( flge1==0)
 			        {LoginSteps  log= new LoginSteps();

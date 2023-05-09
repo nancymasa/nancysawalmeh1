@@ -10,6 +10,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
+
 
 
 public class Customersteps {
@@ -211,6 +213,7 @@ input2 = new Scanner(System.in);
  for(int i=0;i<mylist.size();i++) {
 	 if(mylist.get(i).getid()==id1) {
 		mylist.remove(i) ;
+		 i--;
         System.out.println("customer deleted successfully.");
 
 	 }
