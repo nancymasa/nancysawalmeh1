@@ -57,9 +57,6 @@ public class mainapplication {
 	
 
 	public static void admin() {
-		
-		
-		//int x=LoginSteps.x;
         int flge1=1;
 		input = new Scanner(System.in);
 
@@ -186,7 +183,11 @@ public class mainapplication {
 	    	     flge3=0;
 	    	     break;
 	    	     }		
- 	    			
+             default:
+                
+                 break;
+			
+			
  	    			
  	    			}
  				}

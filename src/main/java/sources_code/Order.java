@@ -16,17 +16,17 @@ public class Order {
 	private int quantity;
 	private int ID;
 	public Order(){}
-		public Order(int ID,String Category,int id,String name, String picture, String description, double price, String material, String cleaninig,int quantity) {
-	    	this.setID(ID);
-			this.setCategory(Category);
-	    	this.setId(id);
-	    	this.setName(name);
-	    	this.setPicture(picture);
-	    	this.setDescription(description);
-	    	this.setPrice(price) ;
-	    	this.setMaterial(material);
-	    	this.setCleaninig(cleaninig);
-	    	this.setQuantity((quantity));
+		public Order(OrderParameter parameterObject) {
+	    	this.setID(parameterObject.iD);
+			this.setCategory(parameterObject.category);
+	    	this.setId(parameterObject.id);
+	    	this.setName(parameterObject.name);
+	    	this.setPicture(parameterObject.picture);
+	    	this.setDescription(parameterObject.description);
+	    	this.setPrice(parameterObject.price) ;
+	    	this.setMaterial(parameterObject.material);
+	    	this.setCleaninig(parameterObject.cleaninig);
+	    	this.setQuantity((parameterObject.quantity));
 	    	
 		}
 		public ArrayList<Order> order=new ArrayList<Order>();

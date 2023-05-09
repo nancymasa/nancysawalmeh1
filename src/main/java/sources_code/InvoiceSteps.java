@@ -3,8 +3,8 @@ package sources_code;
 
 
 public class InvoiceSteps {
-	public static final boolean INVOICE = false;
-	public static final boolean ISDISCOUNT = false;
+	public static  boolean INVOICE = false;
+	public static boolean ISDISCOUNT = false;
 
 	Customersteps o=new Customersteps();
 	static LoginSteps  log= new LoginSteps();
