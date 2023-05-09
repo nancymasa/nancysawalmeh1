@@ -274,6 +274,7 @@ public class mainapplication {
 			}
 			case 3:{
 				cus.removeshopping();
+				break;
 			}
 			case 4:{
 				cus.ckeckout();
@@ -290,6 +291,11 @@ public class mainapplication {
 				log.setisLogincustomer(false);
 				break;
 			}
+			default:
+               
+                break;
+			
+			
 			
 			}
        
