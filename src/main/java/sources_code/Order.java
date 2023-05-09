@@ -1,11 +1,12 @@
 package sources_code;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Order {
 	
 	Customersteps C=new Customersteps();
-	 private String Category;
+	private String Category;
 	private int id;
 	private String name;
 	private String picture;
@@ -17,19 +18,19 @@ public class Order {
 	private int ID;
 	public Order(){}
 		public Order(OrderParameter parameterObject) {
-	    	this.setID(parameterObject.iD);
-			this.setCategory(parameterObject.category);
-	    	this.setId(parameterObject.id);
-	    	this.setName(parameterObject.name);
-	    	this.setPicture(parameterObject.picture);
-	    	this.setDescription(parameterObject.description);
-	    	this.setPrice(parameterObject.price) ;
-	    	this.setMaterial(parameterObject.material);
-	    	this.setCleaninig(parameterObject.cleaninig);
-	    	this.setQuantity((parameterObject.quantity));
+	    	this.setID(parameterObject.getiDn());
+			this.setCategory(parameterObject.getcategoryn());
+	    	this.setId(parameterObject.getidn());
+	    	this.setName(parameterObject.getnamen());
+	    	this.setPicture(parameterObject.getpicturen());
+	    	this.setDescription(parameterObject.getdescriptionn());
+	    	this.setPrice(parameterObject.getpricen()) ;
+	    	this.setMaterial(parameterObject.getmaterialn());
+	    	this.setCleaninig(parameterObject.getcleaninign());
+	    	this.setQuantity((parameterObject.getquantityn()));
 	    	
 		}
-		public ArrayList<Order> order=new ArrayList<Order>();
+		public List<Order> order=new ArrayList<Order>();
 		public String getCategory() {
 			return Category;
 		}

@@ -413,11 +413,9 @@ if(mylist.get(log.getx()).shoppingcart .isEmpty() ) {
 			Worker.setIswaiting(true);
 	             for(int j=0;j<mylist.get(log.getx()).shoppingcart.size();j++) {
 	            	
-				 order.add(new Order(new OrderParameter(log.getx(), mylist.get(log.getx()).shoppingcart.get(j).getCategory(), mylist.get(log.getx()).shoppingcart.get(j).getid(), mylist.get(log.getx()).shoppingcart.get(j).getName(), mylist.get(log.getx()).shoppingcart.get(j).getPicture(), mylist.get(log.getx()).shoppingcart.get(j).getDescriptions(), mylist.get(log.getx()).shoppingcart.get(j).getprice(),
-						mylist.get(log.getx()).shoppingcart.get(j).getMaterial(), mylist.get(log.getx()).shoppingcart.get(j).getCleaning(), mylist.get(log.getx()).shoppingcart.get(j).getQuantity())));
+				 order.add(new Order(new OrderParameter()));
 				 writefile(); 
-				w.workerlist.get(log.getx()).list.add(new Order(new OrderParameter(log.getx(), mylist.get(log.getx()).shoppingcart.get(j).getCategory(), mylist.get(log.getx()).shoppingcart.get(j).getid(), mylist.get(log.getx()).shoppingcart.get(j).getName(), mylist.get(log.getx()).shoppingcart.get(j).getPicture(), mylist.get(log.getx()).shoppingcart.get(j).getDescriptions(), mylist.get(log.getx()).shoppingcart.get(j).getprice(),
-						mylist.get(log.getx()).shoppingcart.get(j).getMaterial(), mylist.get(log.getx()).shoppingcart.get(j).getCleaning(), mylist.get(log.getx()).shoppingcart.get(j).getQuantity())));
+				w.workerlist.get(log.getx()).list.add(new Order(new OrderParameter()));
 			
 				 }
 	            
