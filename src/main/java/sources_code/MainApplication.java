@@ -1,4 +1,5 @@
 package sources_code;
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -43,7 +44,6 @@ public class MainApplication {
 		
 		 
 		if(log.getisLoginadmin()){
-
 			LOGGER.log(Level.INFO,MAIN);
 			LOGGER.log(Level.INFO,WELCADMIN,LoginSteps. userslogin.get(x).getName());
 	        admin();
@@ -69,7 +69,7 @@ public class MainApplication {
 		
         int flge1=1;
 		input = new Scanner(System.in);
-
+		
         while(flge1==1) {
         	LOGGER.log(Level.INFO," *****Menu***** \n ");
         	LOGGER.log(Level.INFO," 1. prodect                      \n");
@@ -229,6 +229,7 @@ public class MainApplication {
 
 			}
         }
+		
         if( flge1==0) {
         	
 			LOGGER.log(Level.INFO,MAIN);

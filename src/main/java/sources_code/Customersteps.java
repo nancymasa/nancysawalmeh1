@@ -223,14 +223,15 @@ input2 = new Scanner(System.in);
 	
 	
 }
-
+int copy=0;
+int flage=0;
+int f=1;
+int number;
 public void addshopping() {
 	
 	pro.carpetdetails();
 	pro.coverdetails();
-	int copy=0;
-	int flage=0;
-	int f=1;
+	
 	input2 = new Scanner(System.in);
 	LOGGER.log(Level.INFO,"Enter ID=");
 
@@ -244,7 +245,7 @@ public void addshopping() {
 	    				LOGGER.log(Level.INFO,"yes: Enter number 1 to increase\n");
 	    				LOGGER.log(Level.INFO,"yes: Enter number 2 to reduce\n");
 	    				LOGGER.log(Level.INFO,"NO: Enter number 2 \n");
-	    			int number=Integer.parseInt(input2.nextLine()); 
+	    			 number=Integer.parseInt(input2.nextLine()); 
 	    			switch(number) {
 	    			case 1:{
 	    				

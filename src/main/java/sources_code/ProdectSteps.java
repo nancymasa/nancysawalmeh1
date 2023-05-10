@@ -1,10 +1,13 @@
 package sources_code;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Handler;
 import java.util.logging.Level;
+import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 public class ProdectSteps {
+	
     private static final Logger LOGGER = Logger.getLogger(ProdectSteps.class.getName());
     private static final String ACTION_1 = "cover";
     private static final String ACTION_2 = "carpet";
@@ -28,6 +31,7 @@ public class ProdectSteps {
 	    	this.quantity=(quantity);
 	    	
 	    }
+	   
 	    public ProdectSteps(){}
 
 	     static ArrayList<ProdectSteps> rugDetails = new ArrayList<ProdectSteps>();
