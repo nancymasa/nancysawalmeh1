@@ -1,5 +1,4 @@
 package sources_code;
-import java.io.Console;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -165,8 +164,8 @@ public class MainApplication {
  	    			int number1=Integer.parseInt(input1.nextLine());
  	    			switch(number1) {
  	    			case 1:{
- 	    				for(int i=0;i<Customersteps.mylist.size();i++) {
- 	    					Customersteps.mylist.get(i).showcustomer();
+ 	    				for(int i=0;i<Customersteps.getMylist().size();i++) {
+ 	    					Customersteps.getMylist().get(i).showcustomer();
  	    				}
  	    				
  	    				break;

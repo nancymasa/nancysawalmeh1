@@ -39,7 +39,7 @@ public class customers {
 				  input2 = new Scanner(System.in);
 					String address =input2.next();
 					
-		Customersteps.mylist.add(new Customersteps(idd,name,phone,address));
+		Customersteps.getMylist().add(new Customersteps(idd,name,phone,address));
 		System.out.println("\n successfull to save information");
 		Customersteps.setIssave(true);
 		  }

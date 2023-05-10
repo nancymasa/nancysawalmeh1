@@ -97,7 +97,7 @@ public class Customersteps {
 		Customersteps.issave = issave;
 	}
 	
-	public static final  List <Customersteps> mylist =new ArrayList<Customersteps>();
+	private static final  List <Customersteps> mylist =new ArrayList<Customersteps>();
 	private Scanner input2;
 	
 
@@ -215,7 +215,7 @@ input2 = new Scanner(System.in);
  for(int i=0;i<mylist.size();i++) {
 	 if(mylist.get(i).getid()==id1) {
 		mylist.remove(i) ;
-		i--;
+		
 		LOGGER.log(Level.INFO,"Customer deleted successfully.");
 
 	 }
@@ -596,6 +596,10 @@ public boolean receivenotification() {
 	Worker.isNotification();
 	LOGGER.log(Level.INFO,"Done to receive notification ");
 	return true;
+}
+
+public static List <Customersteps> getMylist() {
+	return mylist;
 }
 
 
