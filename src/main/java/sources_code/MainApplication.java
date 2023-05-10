@@ -5,7 +5,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MainApplication {
-	
     private static final Logger LOGGER = Logger.getLogger(MainApplication.class.getName());
 
     private static final String MAIN = "-----------------------------------==Cleaning Services Application ==---------------------------------------------------\n";
