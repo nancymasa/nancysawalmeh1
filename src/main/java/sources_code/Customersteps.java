@@ -380,15 +380,15 @@ public void removeshopping() {
 }
 public void ckeckout()	{
 	w.informationworker();
-	int f=1;
+	int fu=1;
 	int counter=0;
 	LOGGER.log(Level.INFO,"{0}",log.getx());
 if(mylist.get(log.getx()).shoppingcart .isEmpty() ) {
 	 InvoiceSteps.setisgenerate(false);
 		LOGGER.log(Level.INFO,"shopping cart is null");
-		f=0;
+		fu=0;
 	}
-	if(f==1) {
+	if(fu==1) {
 		
 		InvoiceSteps.setisgenerate(true);
 		LOGGER.log(Level.INFO,"\n -----------------------------------------------------");
@@ -528,8 +528,8 @@ public void trackorder() {
 	LOGGER.log(Level.INFO,"1. waiting");
 	LOGGER.log(Level.INFO,"2. in tretmeant");
 	LOGGER.log(Level.INFO,"3. completed");
-int number=input2.nextInt();
-switch(number) {
+int number1=input2.nextInt();
+switch(number1) {
 case 1:{
 	Worker.setIswaiting(true);
 	break;
