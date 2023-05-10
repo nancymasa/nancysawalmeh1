@@ -41,7 +41,7 @@ public class invoice {
 		
         if(l.getisLogincustomer()==true) {
 			System.out.println("-----------------------------------==Cleaning Services Application ==---------------------------------------------------\n");
-            System.out.println("Welcome to customer: "+LoginSteps.userslogin.get(x).getName());
+            System.out.println("Welcome to customer: "+LoginSteps.getUserslogin().get(x).getName());
             System.out.println();
 
             customer();

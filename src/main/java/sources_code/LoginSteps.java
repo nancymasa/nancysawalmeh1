@@ -81,7 +81,7 @@ public class LoginSteps {
 		this.password = password;		
 	}
 	Scanner input=new Scanner(System.in);
-	public final static List <LoginSteps> userslogin= new ArrayList<LoginSteps>();
+	 private final static List <LoginSteps> userslogin= new ArrayList<LoginSteps>();
 	static List <LoginSteps> workerlogin= new ArrayList<LoginSteps>();
 
 	boolean isLogin =false;
@@ -294,6 +294,9 @@ public class LoginSteps {
 	}
 	public static void setxnan(int x) {
 		LoginSteps.x = x;
+	}
+	public static List <LoginSteps> getUserslogin() {
+		return userslogin;
 	}	
 		
 	

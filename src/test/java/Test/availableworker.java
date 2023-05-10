@@ -40,13 +40,13 @@ public class availableworker {
 		 if (l.getisLoginworker()==true) {
 			System.out.println("-----------------------------------==Cleaning Services Application ==---------------------------------------------------\n");
 			
-			System.out.println("welacome to worker: "+LoginSteps. userslogin.get(x).getName());
+			System.out.println("welacome to worker: "+LoginSteps. getUserslogin().get(x).getName());
             worker();
 
 		}
 		else if(l.getisLogincustomer()==true) {
 			System.out.println("-----------------------------------==Cleaning Services Application ==---------------------------------------------------\n");
-            System.out.println("welacome to customer: "+LoginSteps. userslogin.get(x).getName());
+            System.out.println("welacome to customer: "+LoginSteps. getUserslogin().get(x).getName());
             customer();
 		}
 	}
@@ -135,12 +135,12 @@ public class availableworker {
 			
     		if (log.getisLoginworker()==true) {
     			System.out.println("-----------------------------------==Cleaning Services Application ==---------------------------------------------------\n");
-                System.out.println("welcome to worker: "+LoginSteps. userslogin.get(x1).getName());
+                System.out.println("welcome to worker: "+LoginSteps. getUserslogin().get(x1).getName());
                 worker();
     		}
     		else if((log.getisLogincustomer()==true)) {
     			System.out.println("-----------------------------------==Cleaning Services Application ==---------------------------------------------------\n");
-                System.out.println("welcome to customer: "+LoginSteps. userslogin.get(x1).getName());
+                System.out.println("welcome to customer: "+LoginSteps. getUserslogin().get(x1).getName());
                 customer();
     		}
     		

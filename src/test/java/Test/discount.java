@@ -39,7 +39,7 @@ public class discount {
 		
         if(l.getisLogincustomer()==true) {
 			System.out.println("-----------------------------------==Cleaning Services Application ==---------------------------------------------------\n");
-            System.out.println("Welcome to customer: "+LoginSteps.userslogin.get(x).getName());
+            System.out.println("Welcome to customer: "+LoginSteps.getUserslogin().get(x).getName());
             System.out.println();
             System.out.println("We have a discount \n If uses the service with an amount of money >400 NIS, you can get 10% discount");
             System.out.println();
