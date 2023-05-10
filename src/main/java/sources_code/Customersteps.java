@@ -2,22 +2,19 @@ package sources_code;
 
 import static sources_code.ProdectSteps.rugDetails;
 
-
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Customersteps {
-	static OrderParameter ordq=new OrderParameter();
+    private static final Logger LOGGER = Logger.getLogger(Customersteps.class.getName());
+
 	static LoginSteps  log= new LoginSteps();
 	static InvoiceSteps in=new InvoiceSteps();
+	
 	static Worker w =new Worker();
     static Order o=new Order();
     static int x=log.getx();
@@ -42,11 +39,12 @@ public class Customersteps {
 		this.address=addres;
 	
 	}
+	
 	public boolean grer() {
 		return grer;
 	}
 	
-	public void setGenerate(boolean grer) {
+	public static void setGenerate(boolean grer) {
 		Customersteps.grer=grer;
 	}
 	
@@ -92,55 +90,61 @@ public class Customersteps {
 		this.address = address ;		
 	}
 	
-	protected static final  List <Customersteps> mylist =new ArrayList<Customersteps>();
-	private Scanner input2;
-	 
-
-	public void recordinformationinit() {
-		mylist.add(new Customersteps(1,"nancy",0555,"nublse"));
-		mylist.add(new Customersteps(2,"masa",0222,"tullkarem"));
-		mylist.add(new Customersteps(4,"noor shole",1778,"hebron"));
-		mylist.add(new Customersteps(5,"noor sawalmeh",1778,"hebron north"));
-		mylist.add(new Customersteps(6,"noor sawalmeh",1778,"Gase"));
-
-
-
-
+	public static boolean isIssave() {
+		return issave;
+	}
+	public static void setIssave(boolean issave) {
+		Customersteps.issave = issave;
 	}
 	
+	public static final  List <Customersteps> mylist =new ArrayList<Customersteps>();
+	private Scanner input2;
+	
+
+	public void recordinformationinit() {
+			mylist.add(new Customersteps(1,"nancy",0555,"nublse"));
+			mylist.add(new Customersteps(2,"masa",0222,"tullkarem"));
+			mylist.add(new Customersteps(4,"noor shole",1778,"hebron"));
+			mylist.add(new Customersteps(5,"noor sawalmeh",1778,"hebron north"));
+			mylist.add(new Customersteps(6,"noor sawalmeh",1778,"Gase"));
+
+		setIssave(true);
+	}
+	
+
+
 	
 public void saveinformationcustmer(){
-	 
-	System.out.println("enter id =");
+	
+	LOGGER.log(Level.INFO,"enter id =");
 	  input2 = new Scanner(System.in);
 	 int idd=input2.nextInt();  
 	  
 	  for(int i=0; i<mylist.size();i++) {
 		  if(mylist.get(i).id != idd) {
-		  this. issavee=true;
-		  setIssave(issavee);
+			  this. issavee=true;
+			  setIssave(issavee);
 		  }}
 		
-		 
 	  
 	  if(issavee) {
-		  System.out.println(issavee);
+		  LOGGER.log(Level.INFO,"{0}",issavee);
 
-	  System.out.println("\nenter name =");
+		  LOGGER.log(Level.INFO,"Enter name =");
 	  input2 = new Scanner(System.in);
-		String name =input2.next();
+		String n =input2.next();
 		
-		 System.out.println("\n enter phone =");
+		LOGGER.log(Level.INFO,"Enter phone =");
 		  input2 = new Scanner(System.in);
-		int phone =input2.nextInt();
+		int ph =input2.nextInt();
 			
 	
-			 System.out.println("\n enter address =");
+		LOGGER.log(Level.INFO,"Enter address =");
 			  input2 = new Scanner(System.in);
-				String address =input2.next();
+				String ad =input2.next();
 				
-	mylist.add(new Customersteps(idd,name,phone,address));
-	System.out.println("\n successfull to save information");
+	mylist.add(new Customersteps(idd,n,ph,ad));
+	LOGGER.log(Level.INFO,"successfull to save information");
 	}
 		
 
@@ -149,13 +153,11 @@ public void saveinformationcustmer(){
 	  
 	
 public void showcustomer() {
+	LOGGER.log(Level.INFO," id :{0} ",getid());
+	LOGGER.log(Level.INFO," Name customer :{0}",getname());
+	LOGGER.log(Level.INFO," phone customer :{0} ",getphone());
+	LOGGER.log(Level.INFO,"Address customer :{0}",getaddress());
 
-System.out.printf (" id :  %s || ",getid());
-System.out.printf(" Name customer : %s  ||",getname());
-System.out.printf(" phone customer :  ");
-System.out.print(getphone());
-System.out.printf(" || Address customer : %s .",getaddress());
-System.out.print(" \n");
 
 
 
@@ -166,31 +168,31 @@ public void updetecustomer() {
 	for (Customersteps c:mylist) {
 			c.showcustomer();
 	}
-	System.out.println("\n ENTER ID =");
+	LOGGER.log(Level.INFO," ENTER ID =");
 	input2 = new Scanner(System.in);
 	 int id1=input2.nextInt(); 
 	 for(int i=0;i<mylist.size();i++) {
 		 if(mylist.get(i).getid()==id1) {
 			 flag=1;
-			 System.out.println("enter new name");
+				LOGGER.log(Level.INFO,"Enter new name");
 			 input2 = new Scanner(System.in);
 			String namenew=input2.nextLine();
-			 System.out.println("enter new phone");
+			LOGGER.log(Level.INFO,"Enter new phone");
 			 input2 = new Scanner(System.in);
 			int phonenew=input2.nextInt();
 			
-			 System.out.println("enter new address");
+			LOGGER.log(Level.INFO,"Enter new address");
 			 input2 = new Scanner(System.in);
 			String adderssnew=input2.nextLine();
 			mylist.get(i).updatecustomrer(id1,namenew,phonenew,adderssnew);
             
-            System.out.println("customer updated successfully.");
+			LOGGER.log(Level.INFO,"customer updated successfully.");
 			
 		 }
 		 
 	 }
 	 if (flag==0) {
-         System.out.println("NOT FOUNG CUSTOMER.");
+			LOGGER.log(Level.INFO,"NOT FOUNG CUSTOMER.");
 
 	 }
 }
@@ -207,14 +209,14 @@ public void deletecustomer() {
 	for (Customersteps c:mylist) {
 		c.showcustomer();
 }
-System.out.println("\n ENTER ID =");
+	LOGGER.log(Level.INFO,"ENTER ID =");
 input2 = new Scanner(System.in);
  int id1=input2.nextInt(); 
  for(int i=0;i<mylist.size();i++) {
 	 if(mylist.get(i).getid()==id1) {
 		mylist.remove(i) ;
-		 i--;
-        System.out.println("customer deleted successfully.");
+		i--;
+		LOGGER.log(Level.INFO,"Customer deleted successfully.");
 
 	 }
 	 }
@@ -223,26 +225,25 @@ input2 = new Scanner(System.in);
 }
 
 public void addshopping() {
-	System.out.println(log.getx());
-
+	
 	pro.carpetdetails();
 	pro.coverdetails();
 	int copy=0;
 	int flage=0;
 	int f=1;
 	input2 = new Scanner(System.in);
-	System.out.println("\nEnter ID=");
+	LOGGER.log(Level.INFO,"Enter ID=");
 
 	int idprodrct=(input2.nextInt());
 	 if(mylist.get(log.getx()).shoppingcart != null) {
 		 for(int i=0;i<mylist.get(log.getx()).shoppingcart.size();i++) {
 	    		if(mylist.get(log.getx()).shoppingcart.get(i).getid()==(idprodrct)) {
-	    			System.out.println("the prodect  is found\n");
-	    			System.out.println("DO you want to change Quantity\n");
+	    			LOGGER.log(Level.INFO,"the prodect  is found\n");
+	    			LOGGER.log(Level.INFO,"DO you want to change Quantity\n");
 	    			while(f==1) {
-	    			System.out.println("yes: Enter number 1 to increase\n");
-	    			System.out.println("yes: Enter number 2 to reduce\n");
-	    			System.out.println("NO: Enter number 2 \n");
+	    				LOGGER.log(Level.INFO,"yes: Enter number 1 to increase\n");
+	    				LOGGER.log(Level.INFO,"yes: Enter number 2 to reduce\n");
+	    				LOGGER.log(Level.INFO,"NO: Enter number 2 \n");
 	    			int number=Integer.parseInt(input2.nextLine()); 
 	    			switch(number) {
 	    			case 1:{
@@ -258,10 +259,10 @@ public void addshopping() {
 
 						  }
 						  if(flage==0) {
-	    		                   System.out.println("not available\n");
+								LOGGER.log(Level.INFO,"not available\n");
                                 
 	    					   }	
-						  break;  }//case1
+						  break;  }
 	    			 
 	    		case 2:{
     				
@@ -276,18 +277,18 @@ public void addshopping() {
 					    
 					    }}
 					  if(flage==0) {
-		                   System.out.println("not available\n");
+							LOGGER.log(Level.INFO,"not available\n");
                        
 					   }	
 				  break; 
 					  
-	    		}//case2
+	    		}
 	    		case 3:{
 	    			f=0;
 	    			break;}
 	    		
     			default:{
-                    System.out.println("Default! ");
+    				LOGGER.log(Level.INFO,"Default! ");
                     break;}
     		  
 	    			}
@@ -297,11 +298,11 @@ public void addshopping() {
 		 if(flage==0) {
 			 for(int j=0;j<rugDetails.size();j++) {
 				 if(rugDetails.get(j).getid()==(idprodrct)) {
-					 System.out.print("\nEnter number of quantity=");
+						LOGGER.log(Level.INFO,"Enter number of quantity=");
 					   copy =(input2.nextInt());
 						  mylist.get(log.getx()). setbalance(mylist.get(log.getx()).getbalance()+(rugDetails.get(j).getprice()*copy));
-					   mylist.get(log.getx()).shoppingcart.add(new ProdectSteps(rugDetails.get(j).getCategory(),rugDetails.get(j).getid(),rugDetails.get(j).getName(),rugDetails.get(j).getPicture(),rugDetails.get(j).getDescriptions(),
-							  rugDetails.get(j).getprice(),rugDetails.get(j).getMaterial(),rugDetails.get(j).getCleaning(),copy));
+					   mylist.get(log.getx()).shoppingcart.add(new ProdectSteps(rugDetails.get(j).getCategory(),rugDetails.get(j).getid(),rugDetails.get(j).getName(),rugDetails.get(j).getDescriptions(),
+							  rugDetails.get(j).getprice(),rugDetails.get(j).getMaterial(),copy));
 				   
 				 }
 				 
@@ -312,11 +313,11 @@ public void addshopping() {
 	 else {
 		 for(int j=0;j<rugDetails.size();j++) {
 			 if(rugDetails.get(j).getid()==(idprodrct)) {
-				 System.out.print("Enter number of quantity=");
+					LOGGER.log(Level.INFO,"Enter number of quantity=");
 				   copy =Integer.parseInt(input2.nextLine());
 					  mylist.get(log.getx()). setbalance(mylist.get(log.getx()).getbalance()+(rugDetails.get(j).getprice()*copy));
-				   mylist.get(log.getx()).shoppingcart.add(new ProdectSteps(rugDetails.get(j).getCategory(),rugDetails.get(j).getid(),rugDetails.get(j).getName(),rugDetails.get(j).getPicture(),rugDetails.get(j).getDescriptions(),
-						  rugDetails.get(j).getprice(),rugDetails.get(j).getMaterial(),rugDetails.get(j).getCleaning(),copy));
+				   mylist.get(log.getx()).shoppingcart.add(new ProdectSteps(rugDetails.get(j).getCategory(),rugDetails.get(j).getid(),rugDetails.get(j).getName(),rugDetails.get(j).getDescriptions(),
+						  rugDetails.get(j).getprice(),rugDetails.get(j).getMaterial(),copy));
 			   
 			 }
 			 
@@ -326,7 +327,7 @@ public void addshopping() {
 								   
 public void showshopping() {
 	
-	System.out.println(log.getx());
+	LOGGER.log(Level.INFO,"{0}",log.getx());
 	
 	for(int k=0;k<mylist.get(log.getx()).shoppingcart.size();k++) {
     	for(int i=0;i<rugDetails.size();i++) {
@@ -339,17 +340,15 @@ public void showshopping() {
 	
 	 for(ProdectSteps pr :mylist.get(log.getx()).shoppingcart) {
 		   pr.print();}
-         System.out.println("balance= ");
-         System.out.println(mylist.get(log.getx()).getbalance());
+		LOGGER.log(Level.INFO,"balance= ");
+		LOGGER.log(Level.INFO,"{0}",mylist.get(log.getx()).getbalance());
         
-         System.out.println("\n ");
        
          if(mylist.get(log.getx()).getbalance()>=400) {
         	 InvoiceSteps.setdiscount(true);
-	         System.out.println("balance after discount=");
+        		LOGGER.log(Level.INFO,"balance after discount=");
 	        mylist.get(log.getx()).setbalance(mylist.get(log.getx()).getbalance()-(mylist.get(log.getx()).getbalance()*(.1)));
-	         System.out.println(mylist.get(log.getx()).getbalance());
-	         System.out.println("\n ");
+	    	LOGGER.log(Level.INFO,"{0}",mylist.get(log.getx()).getbalance());
 	         }
          else {
         	 InvoiceSteps.setdiscount(false);
@@ -357,20 +356,23 @@ public void showshopping() {
 }
 							   
 public void removeshopping() {
-	 for(ProdectSteps pro :mylist.get(log.getx()).shoppingcart) {
-		   pro.print();}
+	 for(ProdectSteps prosteps :mylist.get(log.getx()).shoppingcart) {
+		 prosteps.print();}
 
 	 if(mylist.get(log.getx()).shoppingcart.isEmpty()) {
-		 System.out.println("the arraylist is null ");}
+			LOGGER.log(Level.INFO,"the arraylist is null ");}
 	 else {
-		 System.out.println("Enter Id of prodect = ");
+			LOGGER.log(Level.INFO,"Enter Id of prodect = ");
 		  int idprodect=input2.nextInt();
 		  for(int j=0;j<rugDetails.size();j++) {
 				 if(rugDetails.get(j).getid()==idprodect) {
 				 mylist.get(log.getx()).setbalance((mylist.get(log.getx()).getbalance())-(mylist.get(log.getx()).shoppingcart.get(j).getprice()*mylist.get(log.getx()).shoppingcart.get(j).getQuantity()));
 				 
 				 
-		  mylist.get(log.getx()).shoppingcart.remove(j);}
+		  mylist.get(log.getx()).shoppingcart.remove(j);
+		  j--;
+		  
+		  }
 	 }
 	 }
 	 
@@ -378,53 +380,56 @@ public void removeshopping() {
 public void ckeckout()	{
 	w.informationworker();
 	int f=1;
-	int count=0;
-	System.out.println(log.getx());
+	int counter=0;
+	LOGGER.log(Level.INFO,"{0}",log.getx());
 if(mylist.get(log.getx()).shoppingcart .isEmpty() ) {
-	InvoiceSteps.setisgenerate(false);
-		System.out.println("shopping cart is null");
+	 InvoiceSteps.setisgenerate(false);
+		LOGGER.log(Level.INFO,"shopping cart is null");
 		f=0;
 	}
 	if(f==1) {
 		
 		InvoiceSteps.setisgenerate(true);
-		System.out.println("\n -----------------------------------------------------");
-	    System.out.println("                -------Receipt ---------        ");
-	System.out.println(" Address : "+mylist.get(log.getx()).getaddress());
-	System.out.println("\n -----------------------------------------------------");
+		LOGGER.log(Level.INFO,"\n -----------------------------------------------------");
+		LOGGER.log(Level.INFO,"                -------Receipt ---------        ");
+		LOGGER.log(Level.INFO," Address :{0} ",mylist.get(log.getx()).getaddress());
+	LOGGER.log(Level.INFO,"\n -----------------------------------------------------");
 
-	for(ProdectSteps pro :mylist.get(log.getx()).shoppingcart) {
-		   pro.print();
-		   count++;}
-	  System.out.println("Total balance="+mylist.get(log.getx()).getbalance());
-	  System.out.println("  -----------------------------------------------------");
+	for(ProdectSteps promas :mylist.get(log.getx()).shoppingcart) {
+		   promas.print();
+		   counter++;
+		   }
+	LOGGER.log(Level.INFO,"Total balance={0}",mylist.get(log.getx()).getbalance());
+		LOGGER.log(Level.INFO,"  -----------------------------------------------------");
 
-		if(count>=1||count<=5) {
-			System.out.println("Delivery = from 1 to 5 days");
+		if(counter>=1||counter<=5) {
+			LOGGER.log(Level.INFO,"Delivery = from 1 to 5 days");
 		}
-		else if(count>=6||count<=15) {
-			System.out.println("Delivery = from 5 to 10 days");
+		else if(counter>=6||counter<=15) {
+			LOGGER.log(Level.INFO,"Delivery = from 5 to 10 days");
 		}
 		
-		 System.out.println("\nEnter ok= ");
+		LOGGER.log(Level.INFO,"Enter ok= ");
 		 String check=input2.next();
 		 if(check.equals("ok")) {
-			
+			 
 			Worker.setIswaiting(true);
+			Worker.setAvailable(true);
 	             for(int j=0;j<mylist.get(log.getx()).shoppingcart.size();j++) {
 	            	
 	            	 order.add(new Order(log.getx() ,mylist.get(log.getx()).shoppingcart.get(j).getCategory(),mylist.get(log.getx()).shoppingcart.get(j).getid(),mylist.get(log.getx()).shoppingcart.get(j).getName(),
 							 mylist.get(log.getx()).shoppingcart.get(j).getprice(),mylist.get(log.getx()).shoppingcart.get(j).getMaterial(),mylist.get(log.getx()).shoppingcart.get(j).getQuantity()));
-					 writefile(); 
-					w.workerlist.get(log.getx()).list.add(new Order(log.getx() ,mylist.get(log.getx()).shoppingcart.get(j).getCategory(),mylist.get(log.getx()).shoppingcart.get(j).getid(),mylist.get(log.getx()).shoppingcart.get(j).getName(),
-							 mylist.get(log.getx()).shoppingcart.get(j).getprice(),mylist.get(log.getx()).shoppingcart.get(j).getMaterial(),mylist.get(log.getx()).shoppingcart.get(j).getQuantity()));
 					
-					 }
+					w.workerlist.get(log.getx()).l.add(new Order(log.getx() ,mylist.get(log.getx()).shoppingcart.get(j).getCategory(),mylist.get(log.getx()).shoppingcart.get(j).getid(),mylist.get(log.getx()).shoppingcart.get(j).getName(),
+							 mylist.get(log.getx()).shoppingcart.get(j).getprice(),mylist.get(log.getx()).shoppingcart.get(j).getMaterial(),mylist.get(log.getx()).shoppingcart.get(j).getQuantity()));
+				 }
+	            
 	            
 	         mylist.get(log.getx()).shoppingcart.clear();
 			 mylist.get(log.getx()).setbalance(0);
 			}
 	}
+	
 }
 public void allorder() {
 	
@@ -436,23 +441,21 @@ public void allorder() {
 			order.get(i).printorder();
 			t++;
 		}
-		System.out.println("\n--------------------------------------------------------- ");
+	LOGGER.log(Level.INFO,"\n--------------------------------------------------------- ");
 		
 		
 		
-	System.out.println("-------------Generate statistics------------------ ");
-	System.out.println("\nTotal Paid = ");
-	System.out.println(count);
-	System.out.println("\nTotal orders  = ");
-	System.out.println(t);
+	LOGGER.log(Level.INFO,"-------------Generate statistics------------------ ");
+	LOGGER.log(Level.INFO,"Total Paid = {0}",count);
+	LOGGER.log(Level.INFO,"Total orders  = {0}",t);
 	if(count>0) {
-	System.out.println("\nTotal Debts  = 0");}
+		LOGGER.log(Level.INFO,"Total Debts  = 0");}
 	else {
-		System.out.println("Caution, the application does not deal in debt");
+		LOGGER.log(Level.INFO,"Caution, the application does not deal in debt");
 
 	}
 
-	System.out.println("--------------------------------------------------- ");
+	LOGGER.log(Level.INFO,"--------------------------------------------------- ");
 
  
 	
@@ -479,54 +482,51 @@ public void report() {
             }
             }
 		for (int i=0;i<rugDetails.size();i++) {
-            if (rugDetails.get(i).getCategory() == "cover") {
+            if (rugDetails.get(i).getCategory() .equals("cover")) {
             	t3++;
             	
             }
             
             }
 		
-	System.out.println("-------------REPORTS IN APPLICATION------------------ ");
-	System.out.println("\nTotal number of customer = ");
-	System.out.println(t1);
-	System.out.println("\nTotal number of product carpet = ");
-	System.out.println(t2);
-	System.out.println("\nTotal number of product cover = ");
-	System.out.println(t3);
-	System.out.println("\nTotal Paid = ");
-	System.out.println(count);
+		LOGGER.log(Level.INFO,"-------------REPORTS IN APPLICATION------------------ ");
+		LOGGER.log(Level.INFO,"Total number of customer = {0}",t1);
+		LOGGER.log(Level.INFO,"Total number of product carpet = {0}",t2);
+	    LOGGER.log(Level.INFO,"Total number of product cover = {0}",t3);
+		LOGGER.log(Level.INFO,"Total Paid = {0} ",count);
 	
-	System.out.println("\nTotal orders  = ");
-	System.out.println(t);
+		LOGGER.log(Level.INFO,"\nTotal orders  ={0}",t);
 	if(count>0) {
-	System.out.println("\nTotal Debts  = 0");}
+		LOGGER.log(Level.INFO,"Total Debts  = 0");}
 	else {
-		System.out.println("Caution, the application does not deal in debt");
+		LOGGER.log(Level.INFO,"Caution, the application does not deal in debt");
 
 	}
 
-	System.out.println("--------------------------------------------------- ");
+	LOGGER.log(Level.INFO,"--------------------------------------------------- ");
 
  
 }
 public void showorderw() {
-	for(Order o:w.workerlist.get(log.getx()).list) {
-		o.printorder();
+	for(Order shorder:w.workerlist.get(log.getx()).l) {
+		shorder.printorder();
 	}
 }
+
 public void available() {
-	if(w.workerlist.get(log.getx()).list.isEmpty()) {
+	if(w.workerlist.get(log.getx()).l.isEmpty()) {
 		Worker.setAvailable(true);
 	}
 	else {
 		Worker.setAvailable(false);
 	}
 }
+
 public void trackorder() {
-System.out.println("-----------------------------------------");
-System.out.println("1. waiting");
-System.out.println("2. in tretmeant");
-System.out.println("3. completed");
+	LOGGER.log(Level.INFO,"-----------------------------------------");
+	LOGGER.log(Level.INFO,"1. waiting");
+	LOGGER.log(Level.INFO,"2. in tretmeant");
+	LOGGER.log(Level.INFO,"3. completed");
 int number=input2.nextInt();
 switch(number) {
 case 1:{
@@ -539,42 +539,49 @@ case 2:{
 	break;
 }
 case 3:{
-	
 	Worker.setIswaiting(false);
 	Worker.setIntretmant(false);
 	Worker.setIscompleted(true);
 	Worker.setNotification(true);
-	 w.workerlist.get(log.getx()).list.clear();
+	w.workerlist.get(log.getx()).l.clear();
 	break;
+}
+default :
+{
+	Console console = System.console();
+	if (console != null) {
+	    console.writer().print("Not found");
+	}
 }
 }
 
 
 }
 public void sendnotification() {
-	if(Worker.isNotification()==true) {
-		System.out.println("\nYour cleaning order is complete. Thank you for using our Application! ");
+	if(Worker.isNotification()) {
+		LOGGER.log(Level.INFO,"Your cleaning order is complete. Thank you for using our Application! ");
 
 	}
 }
 public void sendmessage() {
-	if(Worker.isIswaiting()==true) {
-		System.out.println("the order is waiting");
+	if (Worker.isIswaiting())
+	{
+		LOGGER.log(Level.INFO,"the order is waiting");
 	}
-	else if(Worker.isIntretmant()==true) {
-		System.out.println("the order in treatment");
+	else if(Worker.isIntretmant()) {
+		LOGGER.log(Level.INFO,"the order in treatment");
 
 	}
 	else if(Worker.isIscompleted()) {
 		
-		System.out.println("the order is completed");
+		LOGGER.log(Level.INFO,"the order is completed");
 
 	}
 }
 
 public void ccustomernottrue() {
 	if(name==null||phone==0||address==null) {
-		System.out.println("\n Failed to save information \n please try again");
+		LOGGER.log(Level.INFO,"Failed to save information \n please try again");
 	
 		issavee=false;
 
@@ -583,31 +590,15 @@ public void ccustomernottrue() {
 }
 
 
-private void writefile()
-{
-    try
-    {
-    File writef = new File("input.txt"); 
-    PrintWriter write = new PrintWriter(writef);
-    for(int i=0;i<mylist.get(log.getx()).order.size();i++)
-    {
-    	String tostring=(order.get(i).getID()+order.get(i).getCategory()+order.get(i).getId()+order.get(i).getName()+order.get(i).getPicture()+order.get(i).getDescription()+order.get(i).getPrice()+order.get(i).getMaterial()+order.get(i).getCleaninig()+order.get(i).getQuantity());
-    
-        write.print(tostring);
-    }
-    write.close();
-    }
-    catch(FileNotFoundException e)
-    {
-        e.printStackTrace();
-    }
-    }
-public static boolean isIssave() {
-	return issave;
-}
-public static void setIssave(boolean issave) {
-	Customersteps.issave = issave;
+
+public boolean receivenotification() {
+	Worker.isNotification();
+	LOGGER.log(Level.INFO,"Done to receive notification ");
+	return true;
 }
 
 
+
 }
+
+

@@ -1,11 +1,15 @@
 package sources_code;
 
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Worker {
-	public List<Worker> workerlist=new ArrayList<Worker>();
-	public List<Order> list=new  ArrayList <Order>();
+	public final List<Worker> workerlist=new ArrayList<Worker>();
+	public final  List<Order> l=new  ArrayList <Order>();
+    private static final Logger LOGGER = Logger.getLogger(Worker.class.getName());
 
 	Customersteps obj=new Customersteps();
      private static boolean iswaiting;
@@ -22,7 +26,13 @@ public class Worker {
 	private String address;
 	
 	
- public Worker(){}
+ public Worker(){
+	 
+	 Console console = System.console();
+		if (console != null) {
+		    console.writer().print("");
+		}
+ }
  public Worker( int id, String name,int age,int phone,String address) {
 	 this.id=id;
 	 this.name=name;
@@ -65,22 +75,18 @@ public void setAddress(String address) {
 
 public void informationworker() {
 	workerlist.add(new Worker(1,"eman",23,054754,"nablus"));
-	workerlist.add(new Worker(2,"haya",23,65666686,"nablus"));
-	workerlist.add(new Worker(3,"eman sawalmeh",30,755494,"nablus"));
-	workerlist.add(new Worker(4,"aya",22,0756654,"nablus"));
-	workerlist.add(new Worker(5,"marah",24,6707654,"nablus"));
-	workerlist.add(new Worker(6,"jehad",35,90307654,"nablus"));
+	workerlist.add(new Worker(2,"haya",23,65666686,"hebron"));
+	workerlist.add(new Worker(3,"eman sawalmeh",30,755494,"ramallah"));
+	workerlist.add(new Worker(4,"aya",22,0756654,"tolkarem"));
+	workerlist.add(new Worker(5,"marah",24,6707654,"jerusalem"));
+	workerlist.add(new Worker(6,"jehad",35,90307654,"haifa"));
 }
-public void show_worker() {
-	
-	System.out.printf(" id :  %s || ",getId());
-	System.out.printf(" Name worker : %s  ||",getName());
-	System.out.printf(" Age worker :  ");
-	System.out.print(getAge());
-	System.out.printf("||  phone worker :  ");
-	System.out.print(getPhone());
-	System.out.printf(" || Address worker : %s .",getAddress());
-	System.out.print(" \n");
+public void showWorker() {
+	LOGGER.log(Level.INFO," ID :  {0} ",getId());
+	LOGGER.log(Level.INFO," Name worker :{0} ",getName());
+	LOGGER.log(Level.INFO," Age worker :{0} ",getAge());
+	LOGGER.log(Level.INFO," phone worker:{0}  ",getPhone());
+	LOGGER.log(Level.INFO,"Address worker:{0}",getAddress());
 
 	
 }
@@ -90,6 +96,7 @@ public static boolean isIswaiting() {
 public static void setIswaiting(boolean iswaiting) {
 	Worker.iswaiting = iswaiting;
 }
+
 public static boolean isIntretmant() {
 	return intretmant;
 }
