@@ -206,6 +206,7 @@ private void updatecustomrer(int id1, String namenew, int phonenew, String adder
 	
 }
 public void deletecustomer() {
+	int e=0;
 	for (Customersteps c:mylist) {
 		c.showcustomer();
 }
@@ -214,13 +215,14 @@ input2 = new Scanner(System.in);
  int id1=input2.nextInt(); 
  for(int i=0;i<mylist.size();i++) {
 	 if(mylist.get(i).getid()==id1) {
-		mylist.remove(i) ;
+		 e=i;
+		
 		
 		LOGGER.log(Level.INFO,"Customer deleted successfully.");
 
 	 }
 	 }
-	
+ mylist.remove(e) ;
 	
 }
 int copy=0;
@@ -357,6 +359,7 @@ public void showshopping() {
 }
 							   
 public void removeshopping() {
+	int g=0;
 	 for(ProdectSteps prosteps :mylist.get(log.getx()).shoppingcart) {
 		 prosteps.print();}
 
@@ -369,12 +372,13 @@ public void removeshopping() {
 				 if(rugDetails.get(j).getid()==idprodect) {
 				 mylist.get(log.getx()).setbalance((mylist.get(log.getx()).getbalance())-(mylist.get(log.getx()).shoppingcart.get(j).getprice()*mylist.get(log.getx()).shoppingcart.get(j).getQuantity()));
 				 
-				 
-		  mylist.get(log.getx()).shoppingcart.remove(j);
-		  j--;
+				 g=j;
+		 
 		  
 		  }
 	 }
+		  mylist.get(log.getx()).shoppingcart.remove(g);
+
 	 }
 	 
 }

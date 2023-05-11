@@ -44,7 +44,7 @@ public class MainApplication {
 		 
 		if(log.getisLoginadmin()){
 			LOGGER.log(Level.INFO,MAIN);
-			LOGGER.log(Level.INFO,WELCADMIN,LoginSteps. userslogin.get(x).getName());
+			LOGGER.log(Level.INFO,WELCADMIN,LoginSteps.getUserslogin().get(x).getName());
 	        admin();
 		}
 		else if (log.getisLoginworker()) {
@@ -56,7 +56,7 @@ public class MainApplication {
 		}
 		else {
 			LOGGER.log(Level.INFO,MAIN);
-			LOGGER.log(Level.INFO,WELCCUST,LoginSteps. userslogin.get(x).getName());
+			LOGGER.log(Level.INFO,WELCCUST,LoginSteps.getUserslogin().get(x).getName());
             customer();
 		}
 	}
@@ -241,7 +241,7 @@ public class MainApplication {
     		if(log.getisLoginadmin()){
 
     			LOGGER.log(Level.INFO,MAIN);
-    			LOGGER.log(Level.INFO,WELCADMIN,LoginSteps. userslogin.get(x1).getName());
+    			LOGGER.log(Level.INFO,WELCADMIN,LoginSteps.getUserslogin().get(x1).getName());
     	        admin();
     		}
     		else if (log.getisLoginworker()) {
@@ -251,7 +251,7 @@ public class MainApplication {
     		}
     		else {
     			LOGGER.log(Level.INFO,MAIN);
-    			LOGGER.log(Level.INFO,WELCCUST,LoginSteps. userslogin.get(x1).getName());
+    			LOGGER.log(Level.INFO,WELCCUST,LoginSteps.getUserslogin().get(x1).getName());
                 customer();
     		}
     		
@@ -323,7 +323,7 @@ public class MainApplication {
 			if(log.getisLoginadmin()){
 
 				LOGGER.log(Level.INFO,MAIN);
-				LOGGER.log(Level.INFO,WELCADMIN,LoginSteps. userslogin.get(x1).getName());
+				LOGGER.log(Level.INFO,WELCADMIN,LoginSteps.getUserslogin().get(x1).getName());
     	        admin();
     		}
     		else if (log.getisLoginworker()) {
@@ -333,7 +333,7 @@ public class MainApplication {
     		}
     		else {
     			LOGGER.log(Level.INFO,MAIN);
-    			LOGGER.log(Level.INFO,WELCCUST,LoginSteps. userslogin.get(x1).getName());
+    			LOGGER.log(Level.INFO,WELCCUST,LoginSteps.getUserslogin().get(x1).getName());
                 customer();
     		}
     		
@@ -383,7 +383,7 @@ public class MainApplication {
 						if(log.getisLoginadmin()){
 
 			    			LOGGER.log(Level.INFO,MAIN);
-							LOGGER.log(Level.INFO,WELCADMIN,LoginSteps. userslogin.get(x1).getName());
+							LOGGER.log(Level.INFO,WELCADMIN,LoginSteps.getUserslogin().get(x1).getName());
 			    	        admin();
 			    		}
 			    		else if (log.getisLoginworker()) {
@@ -393,7 +393,7 @@ public class MainApplication {
 			    		}
 			    		else {
 			    			LOGGER.log(Level.INFO,MAIN);
-			    			LOGGER.log(Level.INFO,WELCCUST,LoginSteps. userslogin.get(x1).getName());
+			    			LOGGER.log(Level.INFO,WELCCUST,LoginSteps.getUserslogin().get(x1).getName());
 			                customer();
 			    		}
 			    		
