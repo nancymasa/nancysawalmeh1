@@ -146,7 +146,7 @@ public class track {
 	        while(flge1==1) {
 	        	System.out.println("| *************Menu******************|\n ");
 				System.out.println("| 1. Select situation                |\n");
-				System.out.println("| 3. Logout                           |\n");
+				System.out.println("| 2. Logout                           |\n");
 
 				int number=Integer.parseInt(input.nextLine());
 				switch(number) {
@@ -179,7 +179,7 @@ public class track {
 				}
 				case 2:{
 					flge1=0;
-					l.setisLoginworker(false);
+					LoginSteps.setisLoginworker(false);
 					break;
 				}
 				
@@ -192,7 +192,7 @@ public class track {
 			    		LoginSteps.inti();
 			    		LoginSteps.whostheuser();
 			    		int x1=LoginSteps.getxmas();
-			    		log.setx(x1);
+			    		LoginSteps.setx(x1);
 						
 			    		 if (l.getisLoginworker()==true) {
 			    			System.out.println("-----------------------------------==Cleaning Services Application ==---------------------------------------------------\n");

@@ -1,5 +1,4 @@
 package sources_code;
-
 import static sources_code.ProdectSteps.rugDetails;
 
 import java.io.Console;
@@ -206,7 +205,7 @@ private void updatecustomrer(int id1, String namenew, int phonenew, String adder
 	
 }
 public void deletecustomer() {
-	int e=0;
+	int decus = 0;
 	for (Customersteps c:mylist) {
 		c.showcustomer();
 }
@@ -215,16 +214,18 @@ input2 = new Scanner(System.in);
  int id1=input2.nextInt(); 
  for(int i=0;i<mylist.size();i++) {
 	 if(mylist.get(i).getid()==id1) {
-		 e=i;
 		
-		
+		decus = i;
 		LOGGER.log(Level.INFO,"Customer deleted successfully.");
 
 	 }
 	 }
- mylist.remove(e) ;
+ 		mylist.remove(decus) ;
 	
 }
+
+
+
 int copy=0;
 int flage=0;
 int f=1;
@@ -359,7 +360,7 @@ public void showshopping() {
 }
 							   
 public void removeshopping() {
-	int g=0;
+	int remv = 0;
 	 for(ProdectSteps prosteps :mylist.get(log.getx()).shoppingcart) {
 		 prosteps.print();}
 
@@ -372,27 +373,27 @@ public void removeshopping() {
 				 if(rugDetails.get(j).getid()==idprodect) {
 				 mylist.get(log.getx()).setbalance((mylist.get(log.getx()).getbalance())-(mylist.get(log.getx()).shoppingcart.get(j).getprice()*mylist.get(log.getx()).shoppingcart.get(j).getQuantity()));
 				 
-				 g=j;
+				 
+		remv = j;
 		 
 		  
 		  }
 	 }
-		  mylist.get(log.getx()).shoppingcart.remove(g);
-
+		  mylist.get(log.getx()).shoppingcart.remove(remv);
 	 }
 	 
 }
 public void ckeckout()	{
 	w.informationworker();
-	int fu=1;
+	int infor=1;
 	int counter=0;
 	LOGGER.log(Level.INFO,"{0}",log.getx());
 if(mylist.get(log.getx()).shoppingcart .isEmpty() ) {
 	 InvoiceSteps.setisgenerate(false);
 		LOGGER.log(Level.INFO,"shopping cart is null");
-		fu=0;
+		infor=0;
 	}
-	if(fu==1) {
+	if(infor==1) {
 		
 		InvoiceSteps.setisgenerate(true);
 		LOGGER.log(Level.INFO,"\n -----------------------------------------------------");
@@ -532,8 +533,8 @@ public void trackorder() {
 	LOGGER.log(Level.INFO,"1. waiting");
 	LOGGER.log(Level.INFO,"2. in tretmeant");
 	LOGGER.log(Level.INFO,"3. completed");
-int number1=input2.nextInt();
-switch(number1) {
+int numbertrack=input2.nextInt();
+switch(numbertrack) {
 case 1:{
 	Worker.setIswaiting(true);
 	break;
