@@ -2,8 +2,6 @@ package sources_code;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,11 +29,6 @@ public class MainApplication {
 	private static Customersteps cus=new Customersteps();
 	
 	public static void main(String[] args) {
-		Handler handlerObj = new ConsoleHandler();
-		 handlerObj.setLevel(Level.ALL);
-		 LOGGER.addHandler(handlerObj);
-		 LOGGER.setLevel(Level.ALL);
-		 LOGGER.setUseParentHandlers(false);
 		pro.init();
 		cus.recordinformationinit();
 		wrkr.informationworker();
